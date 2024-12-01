@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include "busca.h"
+#include "busca.c"
 #define TAMANHO_ARRAY 10000
 #define NUM_TESTES 50
-//#define MAIN1
-#define MAIN2
+#define MAIN1
+//#define MAIN2
 
 #ifdef MAIN1
 
@@ -16,7 +17,7 @@ int main()
     int i, elemento, comparacoes;
     double mediaComparacoes;
 
-    
+
     // Preenche o array com valores de 1 a 10000
     for (i = 0; i < TAMANHO_ARRAY; i++)
     {
@@ -26,10 +27,10 @@ int main()
     // Inicializa o gerador de números aleatórios com o tempo atual
     srand(time(NULL));
 
-    for (int i = 0; i < TAMANHO_ARRAY; i++) {
+    /*for (int i = 0; i < TAMANHO_ARRAY; i++) {
         printf("%d ", array[i]);  // Imprime cada elemento do array
     }
-    printf("\n");
+    printf("\n");*/
 
     // Realiza 50 testes de busca binária
     for (i = 0; i < NUM_TESTES; i++)
@@ -72,7 +73,7 @@ void Algoritmo(int A[], int n, int *comparacoes)
             }
             (*comparacoes)++;
         }
-        
+
         x = A[k]; //essas três atribuições são
         A[k] = A[i]; //para trocar os elementos A[k] e A[i]
         A[i] = x; //de posição no array A
